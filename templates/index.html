@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block meta %}
+<meta http-equiv=”refresh” content=”5" />
+{%endblock%}
+{% block head %}
+    <div class="container">
+        <br>
+        {%for i in weather%}
+        <div class="card">
+            <div class="card-header">
+              {{i[0]}}
+            </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Temperature(C)</th>
+                    <th scope="col">Temperature(f)</th>
+                    <th scope="col">Humidity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{i[1][0]}}</td>
+                        <td>{{i[1][1]}}</td>
+                        <td>{{i[2]}}</td>
+                      </tr>
+                </tbody>
+            </table>
+        </div><br>
+        {%endfor%}
+    </div>
+{% endblock %}
