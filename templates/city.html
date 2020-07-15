@@ -2,7 +2,7 @@
 
 {% block head %}
 <div class="container">
-<table class="table">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">City Name</th>
@@ -10,13 +10,13 @@
       </tr>
     </thead>
     <tbody>
-    {%for i in city%}
-        <tr>
+      {%for i in city%}
+      <tr>
         <td>{{i[1]}}</td>
         <td>{{i[0]}}</td>
       </tr>
-    {%endfor%}
+      {%endfor%}
     </tbody>
-</table>
+  </table>
 </div>
 {% endblock %}

@@ -1,32 +1,44 @@
 {% extends 'base.html' %}
-{% block meta %}
-<meta http-equiv=”refresh” content=”5" />
-{%endblock%}
 {% block head %}
-    <div class="container">
-        <br>
-        {%for i in weather%}
-        <div class="card">
-            <div class="card-header">
-              {{i[0]}}
-            </div>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Temperature(C)</th>
-                    <th scope="col">Temperature(f)</th>
-                    <th scope="col">Humidity</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{i[1][0]}}</td>
-                        <td>{{i[1][1]}}</td>
-                        <td>{{i[2]}}</td>
-                      </tr>
-                </tbody>
-            </table>
-        </div><br>
-        {%endfor%}
-    </div>
+<div class="container">
+  <br>
+  <center class="font-big">What's Your Weather?</center>
+  <center>
+    <h3 class="text-info"><b>*Note to search multiple cities seperate by comma or space*</b></h3>
+  </center>
+  <center>
+    <form method="POST">
+      <input type="text" name="text" class="round large font-big border text-secondary" placeholder="Enter City Name..">
+      <button type="submit" class="btn btn-xl btn-primary btn-circle btn-lg">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+  </center>
+  {%if not hidden%}
+  <br>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">City Name</th>
+        <th scope="col">Temperature(C)</th>
+        <th scope="col">Temperature(f)</th>
+        <th scope="col">Weather</th>
+        <th scope="col">Humidity</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {%for i in weather%}
+      <tr>
+        <td>{{i[0]}}</td>
+        <td>{{i[1][0]}}</td>
+        <td>{{i[1][1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%endif%}
+</div>
 {% endblock %}

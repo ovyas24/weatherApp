@@ -1,0 +1,37 @@
+.round{
+    margin-top: 5px;
+    border-radius: 25px 25px 25px 25px;
+    padding: 10px;
+}
+
+.font-big{
+    font-size: 36px;
+}
+
+.large{
+    width: 400px;
+    height: 70px;
+    outline: none;
+    border:none;
+    box-shadow: aqua;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.btn-circle.btn-xl {
+    margin-top: -15px;
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 45px;
+    font-size: 24px;
+    line-height: 1.33;
+}
